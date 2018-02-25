@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>index </title>
+</head>
+<body>
+	<h2>Opening Page</h2>
+	<table border="1">
+		<tr>
+			<th width=60>Kode</th>
+			<th width=150>Nama Produk</th>
+			<th width=100>Harga</th>
+			<th width=80>Ubah</th>
+			<th width=80>Hapus</th>
+		</tr>
+		{% for model in container %}
+			<tr>
+				<td>{{ model.kode }}</td>
+				<td>{{ model.nama }}</td>
+				<td>{{ model.harga }}</td>
+				<td><a href="http://localhost:5000/ubah/{{model.kode}}">Ubah</a></td>
+				<td><a href="http://localhost:5000/hapus/{{model.kode}}">Hapus</a></td>
+			</tr>
+		{%endfor%}
+
+	</table>
+	<p><a href="/tambah">Tambah Data</a></p>
+
+</body>
+</html>
